@@ -29,6 +29,10 @@ export function Machine(props) {
     cursor: "pointer",
   };
 
+  const reload = () => {
+    document.location.reload(true);
+  }
+
   const restart = (newValue) => {
     let newAfd = new AFN();
     setDoce("");
@@ -550,7 +554,7 @@ export function Machine(props) {
               >
                 {doce && (
                   <button
-                    onClick={restart}
+                    onClick={reload}
                     style={{
                       position: "absolute",
                       right: "22%",
