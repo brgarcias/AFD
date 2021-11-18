@@ -4,6 +4,7 @@ import AFN from "./AFN";
 export function Machine(props) {
   let [afd, setAfd] = useState(new AFN());
   let [valor, setValor] = useState(0);
+  let [troco, setTroco] = useState(false);
   let [a, setA] = useState(false);
   let [b, setB] = useState(false);
   let [c, setC] = useState(false);
@@ -23,21 +24,31 @@ export function Machine(props) {
     padding: "10px",
     margin: "5px",
     border: "1px solid",
-    fontSize: '20px',
-};
-const styleOff = {
+    fontSize: "20px",
+  };
+  const styleOff = {
     borderRadius: "50%",
     background: "#5A559A",
     color: "#B8B8FE",
     padding: "10px",
     margin: "5px",
     border: "1px solid",
-    fontSize: '20px',
+    fontSize: "20px",
+  };
+
+  const styleButton = {
+    background: "#5A559A",
+    color: "#B8B8FE",
+    padding: "10px",
+    margin: "5px",
+    border: "1px solid",
+    fontSize: "14px",
   };
 
   const restart = () => {
     setAfd(new AFN());
     setValor(0);
+    setTroco(false);
     setDoce("");
     setP("");
     setEst(0);
@@ -98,9 +109,9 @@ const styleOff = {
   };
 
   const handleCA = () => {
-    afd.consumir("c");
+    afd.consumir("a");
     setDoce("A");
-    setValor(afd.getTroco() - 6);
+    setTroco(afd.getTroco() - 6);
     setP(afd.getPalavra());
     setEst(afd.getEstado());
     setA(false);
@@ -115,7 +126,7 @@ const styleOff = {
   const handleCB = () => {
     afd.consumir("b");
     setDoce("B");
-    setValor(afd.getTroco() - 7);
+    setTroco(afd.getTroco() - 7);
     setP(afd.getPalavra());
     setEst(afd.getEstado());
     setA(false);
@@ -130,7 +141,7 @@ const styleOff = {
   const handleCC = () => {
     afd.consumir("c");
     setDoce("C");
-    setValor(afd.getTroco() - 8);
+    setTroco(afd.getTroco() - 8);
     setP(afd.getPalavra());
     setEst(afd.getEstado());
     setA(false);
@@ -153,9 +164,11 @@ const styleOff = {
       }}
     >
       <p style={{ fontSize: "16px" }}>
-        Valor:{" "}
-        <span style={{ fontWeight: "700", fontSize: "12px" }}>{valor}</span>{" "}
+        Valor: R$ <span style={{ fontWeight: "700" }}>{valor}</span>
       </p>
+      <button onClick={restart} style={styleButton}>
+        Recomeçar
+      </button>
       <div style={{ padding: "10px" }}>
         <button onClick={handleC5} style={styleOn}>
           5
@@ -192,14 +205,20 @@ const styleOff = {
           Doce:{" "}
           <span style={{ fontWeight: "700", fontSize: "12px" }}>{doce}</span>
         </p>
-        <p style={{ paddingRight: "20px", fontSize: "16px" }}>
+        {/* <p style={{ paddingRight: "20px", fontSize: "16px" }}>
           Palavra:{" "}
           <span style={{ fontWeight: "700", fontSize: "12px" }}>{p}</span>
         </p>
         <p style={{ fontSize: "16px" }}>
           Estado:{" "}
           <span style={{ fontWeight: "700", fontSize: "12px" }}>{est}</span>
-        </p>
+        </p> */}
+        {troco && (
+          <p style={{ fontSize: "16px" }}>
+            Troco:{" "}
+            <span style={{ fontWeight: "700", fontSize: "12px" }}>{troco}</span>
+          </p>
+        )}
       </div>
     </div>
   );
