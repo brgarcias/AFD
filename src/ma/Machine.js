@@ -13,16 +13,16 @@ export function Machine(props) {
   let [troco, setTroco] = useState();
 
   const styleOn = {
-    background: "#ede6e6",
-    color: "#575454",
+    background: "#47A958",
+    color: "white",
     border: 0,
     borderRadius: "5px",
     fontSize: "20px",
     cursor: "pointer",
   };
   const styleOff = {
-    background: "#575454",
-    color: "#ede6e6",
+    background: "rgb(251 102 171)",
+    color: "rgb(255 255 255)",
     border: 0,
     borderRadius: "5px",
     fontSize: "20px",
