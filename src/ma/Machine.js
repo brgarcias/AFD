@@ -476,17 +476,17 @@ export function Machine(props) {
                 >
                   <div style={{ margin: "5px" }}>
                     <button onClick={handleC1} style={styleOn}>
-                      1
+                      1$
                     </button>
                   </div>
                   <div style={{ margin: "5px" }}>
                     <button onClick={handleC2} style={styleOn}>
-                      2
+                      2$
                     </button>
                   </div>
                   <div style={{ margin: "5px" }}>
                     <button onClick={handleC5} style={styleOn}>
-                      5
+                      5$
                     </button>
                   </div>
                 </div>
