@@ -4,7 +4,7 @@ import {Machine} from './ma/Machine.js'
 
 function App() {
 
-return <Machine/>;
+return <Machine />;
 }
 
 export default App;
