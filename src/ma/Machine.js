@@ -12,8 +12,22 @@ export function Machine(props) {
   let [est, setEst] = useState(0);
   let [troco, setTroco] = useState();
 
-  const styleOn = { background: "#ede6e6", color: "#575454" };
-  const styleOff = { background: "#575454", color: "#ede6e6" };
+  const styleOn = {
+    background: "#ede6e6",
+    color: "#575454",
+    border: 0,
+    borderRadius: "5px",
+    fontSize: "20px",
+    cursor: "pointer",
+  };
+  const styleOff = {
+    background: "#575454",
+    color: "#ede6e6",
+    border: 0,
+    borderRadius: "5px",
+    fontSize: "20px",
+    cursor: "pointer",
+  };
 
   const restart = (newValue) => {
     let newAfd = new AFN();
@@ -301,8 +315,8 @@ export function Machine(props) {
               style={{
                 position: "absolute",
                 top: "-15px",
-                fontSize: '40px',
-                left: '25px',
+                fontSize: "40px",
+                left: "25px",
               }}
             >
               Máquina de Doces
@@ -318,7 +332,7 @@ export function Machine(props) {
                 borderRadius: "25px",
                 display: "flex",
                 flexDirection: "column",
-                top: '90px',
+                top: "90px",
                 justifyContent: "space-between",
               }}
             >
@@ -439,48 +453,78 @@ export function Machine(props) {
                 R$ {valor},00
               </div>
 
-              <div style={{ float: "left", padding: "7px" }}>
-                <div>
-                  <button onClick={handleC1} style={styleOn}>
-                    1
-                  </button>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  position: "absolute",
+                  right: "15px",
+                  top: "80px",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "row",
+                    float: "left",
+                    padding: "7px",
+                  }}
+                >
+                  <div style={{ margin: "5px" }}>
+                    <button onClick={handleC1} style={styleOn}>
+                      1
+                    </button>
+                  </div>
+                  <div style={{ margin: "5px" }}>
+                    <button onClick={handleC2} style={styleOn}>
+                      2
+                    </button>
+                  </div>
+                  <div style={{ margin: "5px" }}>
+                    <button onClick={handleC5} style={styleOn}>
+                      5
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <button onClick={handleC2} style={styleOn}>
-                    2
-                  </button>
-                </div>
-                <div>
-                  <button onClick={handleC5} style={styleOn}>
-                    5
-                  </button>
-                </div>
-              </div>
 
-              <div style={{ float: "right", padding: "7px" }}>
-                <div>
-                  <button
-                    onClick={a ? handleCA : () => {}}
-                    style={a ? styleOn : styleOff}
-                  >
-                    a
-                  </button>
-                </div>
-                <div>
-                  <button
-                    onClick={b ? handleCB : () => {}}
-                    style={b ? styleOn : styleOff}
-                  >
-                    b
-                  </button>
-                </div>
-                <div>
-                  <button
-                    onClick={c ? handleCC : () => {}}
-                    style={c ? styleOn : styleOff}
-                  >
-                    c
-                  </button>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "row",
+                    float: "right",
+                    padding: "7px",
+                  }}
+                >
+                  <div style={{ margin: "5px" }}>
+                    <button
+                      onClick={a ? handleCA : () => {}}
+                      style={a ? styleOn : styleOff}
+                    >
+                      a
+                    </button>
+                  </div>
+                  <div style={{ margin: "5px" }}>
+                    <button
+                      onClick={b ? handleCB : () => {}}
+                      style={b ? styleOn : styleOff}
+                    >
+                      b
+                    </button>
+                  </div>
+                  <div style={{ margin: "5px" }}>
+                    <button
+                      onClick={c ? handleCC : () => {}}
+                      style={c ? styleOn : styleOff}
+                    >
+                      c
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
