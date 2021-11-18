@@ -279,11 +279,11 @@ export function Machine(props) {
         style={{
           position: "absolute",
           top: "7%",
-          left: "30%",
+          left: "19%",
           background: "#b4d72a",
           borderRadius: "50px",
-          width: "30%",
-          height: "75%",
+          width: "55%",
+          height: "85%",
           padding: "20px",
         }}
       >
@@ -292,12 +292,21 @@ export function Machine(props) {
             style={{
               width: "80%",
               height: 462,
-
               float: "left",
             }}
           ></div>
 
           <div>
+            <p
+              style={{
+                position: "absolute",
+                top: "-15px",
+                fontSize: '40px',
+                left: '25px',
+              }}
+            >
+              Máquina de Doces
+            </p>
             <div
               style={{
                 position: "absolute",
@@ -309,6 +318,7 @@ export function Machine(props) {
                 borderRadius: "25px",
                 display: "flex",
                 flexDirection: "column",
+                top: '90px',
                 justifyContent: "space-between",
               }}
             >
@@ -419,12 +429,14 @@ export function Machine(props) {
                 style={{
                   float: "right",
                   color: "green",
-                  width: "75px",
+                  width: "140px",
                   height: "25px",
                   background: "black",
+                  textAlign: "center",
+                  borderRadius: "50px",
                 }}
               >
-                valor : {valor}
+                R$ {valor},00
               </div>
 
               <div style={{ float: "left", padding: "7px" }}>
@@ -477,6 +489,45 @@ export function Machine(props) {
               style={{
                 position: "absolute",
                 bottom: 0,
+                right: "100px",
+                padding: "20px",
+              }}
+            >
+              <div style={{ height: "10px" }}></div>
+              <div
+                style={{
+                  background: "#1e1e1e",
+                  width: "80px",
+                  height: "80px",
+                  color: "white",
+                  textAlign: "center",
+                  borderRadius: "20px",
+                }}
+              >
+                {doce && (
+                  <button
+                    onClick={restart}
+                    style={{
+                      position: "absolute",
+                      right: "22%",
+                      top: "42%",
+                      background: "#c38932",
+                      border: 0,
+                      borderRadius: "20px",
+                      padding: "10px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Resetar
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
                 right: 0,
                 padding: "20px",
               }}
@@ -494,21 +545,19 @@ export function Machine(props) {
                 {troco}
               </div>
               <div style={{ height: "10px" }}></div>
-              <div style={{
+              <div
+                style={{
                   background: "#1e1e1e",
                   width: "80px",
                   height: "80px",
                   color: "white",
                   textAlign: "center",
                   borderRadius: "20px",
-                }}>
-                {doce && (
-                <p>
-                  Doce
-                </p>
-                )}
+                }}
+              >
+                {doce && <p>Doce</p>}
                 {doce}
-                </div>
+              </div>
             </div>
           </div>
         </div>
