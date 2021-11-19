@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import {Machine} from './ma/Machine.js'
+import {MaquinaDeVendas} from './ma/MaquinaDeVendas.js'
 
 function App() {
 
-return <Machine />;
+return <MaquinaDeVendas />;
 }
 
 export default App;

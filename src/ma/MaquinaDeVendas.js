@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AFN from "./AFN";
 
-export function Machine(props) {
+export function MaquinaDeVendas(props) {
   let [afd, setAfd] = useState(new AFN());
   let [valor, setValor] = useState(0);
   let [a, setA] = useState(false);
@@ -47,7 +47,7 @@ export function Machine(props) {
     setAfd(newAfd);
   };
 
-  const handleC5 = () => {
+  const consumir5Reais = () => {
     if (afd.consumir("5") < 0) {
       restart("5");
       return;
@@ -64,7 +64,7 @@ export function Machine(props) {
     setEst(afd.getEstado());
   };
 
-  const handleC2 = () => {
+  const consumir2Reais = () => {
     if (afd.consumir("2") < 0) {
       restart("2");
       return;
@@ -81,7 +81,7 @@ export function Machine(props) {
     setEst(afd.getEstado());
   };
 
-  const handleC1 = () => {
+  const consumir1Real = () => {
     if (afd.consumir("1") < 0) {
       restart("1");
       return;
@@ -98,7 +98,7 @@ export function Machine(props) {
     setEst(afd.getEstado());
   };
 
-  const handleCA = () => {
+  const consumirDoceA = () => {
     afd.consumir("a");
 
     setDoce(
@@ -163,7 +163,7 @@ export function Machine(props) {
     }
   };
 
-  const handleCB = () => {
+  const consumirDoceB = () => {
     afd.consumir("b");
     setDoce(
       <div
@@ -227,7 +227,7 @@ export function Machine(props) {
     }
   };
 
-  const handleCC = () => {
+  const consumirDoceC = () => {
     afd.consumir("c");
 
     setDoce(
@@ -479,17 +479,17 @@ export function Machine(props) {
                   }}
                 >
                   <div style={{ margin: "5px" }}>
-                    <button onClick={handleC1} style={styleOn}>
+                    <button onClick={consumir1Real} style={styleOn}>
                       1$
                     </button>
                   </div>
                   <div style={{ margin: "5px" }}>
-                    <button onClick={handleC2} style={styleOn}>
+                    <button onClick={consumir2Reais} style={styleOn}>
                       2$
                     </button>
                   </div>
                   <div style={{ margin: "5px" }}>
-                    <button onClick={handleC5} style={styleOn}>
+                    <button onClick={consumir5Reais} style={styleOn}>
                       5$
                     </button>
                   </div>
@@ -507,7 +507,7 @@ export function Machine(props) {
                 >
                   <div style={{ margin: "5px" }}>
                     <button
-                      onClick={a ? handleCA : () => {}}
+                      onClick={a ? consumirDoceA : () => {}}
                       style={a ? styleOn : styleOff}
                     >
                       a
@@ -515,7 +515,7 @@ export function Machine(props) {
                   </div>
                   <div style={{ margin: "5px" }}>
                     <button
-                      onClick={b ? handleCB : () => {}}
+                      onClick={b ? consumirDoceB : () => {}}
                       style={b ? styleOn : styleOff}
                     >
                       b
@@ -523,7 +523,7 @@ export function Machine(props) {
                   </div>
                   <div style={{ margin: "5px" }}>
                     <button
-                      onClick={c ? handleCC : () => {}}
+                      onClick={c ? consumirDoceC : () => {}}
                       style={c ? styleOn : styleOff}
                     >
                       c
